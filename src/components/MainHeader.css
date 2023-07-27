@@ -1,0 +1,83 @@
+.MainHeader__header {
+  font-size: 10vw;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (orientation: landscape) {
+  .MainHeader__header {
+    font-size: 8vw;
+  }
+}
+
+.MainHeader__header-line-1 {
+  padding: 0 0.6vw;
+  font-weight: 100;
+  position: relative;
+}
+
+.MainHeader__header-line-2 {
+  display: flex;
+}
+
+.MainHeader__header-line-2 > div:first-child {
+  position: relative;
+  font-size: 0.5em;
+  font-weight: 200;
+  padding: 0.6vw 2vw 0 0;
+  margin-left: auto;
+  margin-bottom: auto;
+}
+
+.MainHeader__header-sub {
+  position: relative;
+  font-size: 0.5em;
+  font-weight: 200;
+  padding: 0 0 0 1vw;
+}
+
+.MainHeader__header-line-2 div:nth-child(2) {
+  position: relative;
+  padding: 0.1em;
+  font-weight: 300;
+  letter-spacing: 0.3vw;
+}
+
+.MainHeader__header-line-1:after,
+.MainHeader__header-line-1:before,
+.MainHeader__header-line-2 div:nth-child(2):before,
+.MainHeader__header-line-2 div:nth-child(2):after {
+  content: "";
+  position: absolute;
+  background-color: var(--background-color);
+  opacity: 0.6;
+  transform: scale(0);
+}
+
+.MainHeader__header-line-1:before,
+.MainHeader__header-line-2 div:nth-child(2):before {
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 1px;
+}
+
+.MainHeader__header-line-1:after,
+.MainHeader__header-line-2 div:nth-child(2):after {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+}
+
+.MainHeader__header-line-2 div:nth-child(2):after {
+  left: 0;
+}
+
+h2.is-inview .MainHeader__header-line-1:before,
+h2.is-inview .MainHeader__header-line-1:after,
+h2.is-inview .MainHeader__header-line-2 div:nth-child(2):before,
+h2.is-inview .MainHeader__header-line-2 div:nth-child(2):after {
+  transform: scale(1);
+  transition: transform 2s cubic-bezier(0, 1, 0, 1);
+}

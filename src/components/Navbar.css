@@ -1,0 +1,235 @@
+header {
+  position: fixed;
+  width: 100vw;
+  z-index: 1;
+  color: var(--background-color);
+  opacity: 1;
+  font-weight: 200;
+  transition-timing-function: ease;
+  --transition-timing: 300ms;
+  --top-bottom-padding: 0.75rem;
+  --tablet-icon-width: 3.8vw;
+  transition: opacity var(--transition-timing) ease;
+}
+
+header.secondary-nav {
+  color: var(--color);
+}
+
+header.disappear {
+  opacity: 0;
+  pointer-events: none;
+}
+
+html.menu-open header.secondary-nav {
+  color: var(--background-color);
+}
+
+/* @media (min-width: 800px) {
+  header.slide-transition {
+    transition: opacity var(--transition-timing);
+  }
+  header.hide {
+    transform: none;
+    opacity: 0;
+  }
+  header.show {
+    opacity: 1;
+  }
+  header.secondary-nav {
+    background-color: unset;
+  }
+} */
+
+.Nav__logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: var(--top-bottom-padding) 0;
+  padding-left: var(--page-margin-sides);
+  font-size: 1rem;
+  font-weight: 200;
+  letter-spacing: 0.05rem;
+}
+
+header.secondary-nav .Nav__logo {
+  position: absolute;
+}
+
+@media (min-width: 800px) {
+  .Nav__logo {
+    /* padding: 2vw 0; */
+    /* padding-left: calc((((100vw / 12) - (var(--tablet-icon-width))) / 4) * 3); */
+    padding: 2vw 0 2vw 2vw;
+  }
+}
+
+/* header.secondary-nav .Nav__first-name {
+  display: none;
+} */
+
+/* @media (min-width: 800px) {
+  header.secondary-nav .Nav__first-name {
+    display: initial;
+  }
+} */
+
+.Nav__menu-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  padding: calc(var(--top-bottom-padding) + 0.75rem) 0 var(--top-bottom-padding);
+  padding-right: var(--page-margin-sides);
+  align-items: baseline;
+}
+
+@media (min-width: 500px) {
+  .Nav__menu-btn {
+    display: none;
+  }
+}
+
+header.secondary-nav .Nav__menu-btn {
+  display: inline-flex;
+}
+
+@media (min-width: 800px) {
+  header.secondary-nav .Nav__menu-btn {
+    position: absolute;
+    padding: 2vw 2vw 2vw 0;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1099px) {
+  header.secondary-nav .Nav__menu-btn {
+    --right: calc((((100vw / 12) - (var(--tablet-icon-width))) / 4) * 3);
+    --left: calc((((100vw / 12) - (var(--tablet-icon-width))) / 4));
+    padding: 3.6vw var(--right) 2vw var(--left);
+  }
+  header.secondary-nav .Nav__menu-btn span {
+    display: none;
+  }
+}
+
+.Nav__menu-icon {
+  margin-left: 0.5rem;
+  background-color: var(--background-color);
+}
+
+html:not(.menu-open) header.secondary-nav .Nav__menu-icon {
+  background-color: var(--color);
+}
+
+.Nav__menu-icon,
+.Nav__menu-icon:before,
+.Nav__menu-icon:after {
+  position: relative;
+  width: 1.5rem;
+  height: 0.5px;
+}
+
+.Nav__menu-icon:after,
+.Nav__menu-icon:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  transform: translateY(-5px);
+  background-color: inherit;
+}
+.Nav__menu-icon:before {
+  transform: translateY(-10px);
+}
+
+@media (min-width: 800px) and (max-width: 1099px) {
+  .Nav__menu-icon {
+    margin-left: 0;
+  }
+
+  .Nav__menu-icon,
+  .Nav__menu-icon:before,
+  .Nav__menu-icon:after {
+    width: var(--tablet-icon-width);
+    height: 0.04vw;
+  }
+
+  .Nav__menu-icon:after {
+    transform: translateY(-0.8vw);
+  }
+  .Nav__menu-icon:before {
+    transform: translateY(-1.6vw);
+  }
+}
+
+header .Nav__navbar {
+  display: none;
+}
+
+@media (min-width: 500px) {
+  header:not(.secondary-nav) .Nav__navbar {
+    display: initial;
+  }
+}
+
+.Nav__navbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: calc(var(--top-bottom-padding) + 0.75rem) 0 var(--top-bottom-padding);
+  padding-right: var(--page-margin-sides);
+}
+
+@media (min-width: 800px) {
+  .Nav__navbar {
+    padding: calc(2vw + 1vw) 2vw 2vw 0;
+  }
+}
+
+.Nav__navbar ul {
+  display: flex;
+  gap: 2rem;
+  font-size: 1rem;
+  font-weight: 200;
+  letter-spacing: 0.05rem;
+}
+
+header aside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--page-margin-sides);
+  background-color: var(--color);
+  clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  transition: clip-path var(--page-animation-duration);
+  transition-timing-function: var(--page-animation-timing-function);
+}
+
+html.menu-open header aside {
+  clip-path: polygon(0 0, 100% 0, 100% 110%, 0 100%);
+}
+
+header aside nav {
+  width: 100%;
+}
+
+header aside ul {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: calc(100vw / 45);
+  gap: 2vw;
+}
+
+header aside li {
+  grid-column: 1/13;
+  font-size: 10vmax;
+  text-align: right;
+}
+
+header aside li a {
+  /* padding: 10vw 0; */
+  /* text-align: right; */
+}

@@ -1,0 +1,59 @@
+#loading-screen {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--background-color);
+  background-color: var(--color);
+  font-size: 3rem;
+  font-weight: 100;
+  clip-path: polygon(0 0, 100% 0, 100% 110%, 0 100%);
+  transition: none;
+}
+
+html:not(.loading) #loading-screen {
+  clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  transition: clip-path var(--page-animation-duration);
+  transition-timing-function: var(--page-animation-timing-function);
+}
+
+#loading-screen .loader {
+  position: relative;
+  transition: transform 300ms;
+  /* animation-name: appear;
+  animation-duration: 1000ms;
+  animation-timing-function: ease-out; */
+  transform: scale(0);
+  transform: scale(var(--enlarge));
+}
+
+html:not(.loading) #loading-screen .loader {
+  position: relative;
+  transform: scale(0);
+}
+
+@keyframes appear {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+#loading-screen .icon {
+  opacity: 0.5;
+}
+
+#loading-screen .progress {
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  width: 0%;
+  overflow: hidden;
+}

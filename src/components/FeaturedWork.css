@@ -1,0 +1,258 @@
+.FeaturedWork__container {
+  padding: var(--page-margin-top-bottom) var(--page-margin-sides);
+}
+
+.FeaturedWork__header {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: calc(100vw / 45);
+
+  margin-bottom: 8vw;
+}
+
+.FeaturedWork__header h2 {
+  grid-column: 1/13;
+  font-size: 19vw;
+  font-weight: 300;
+}
+
+@media (min-width: 500px) {
+  .FeaturedWork__header h2 {
+    grid-column: 2/10;
+    font-size: 17vw;
+    font-weight: 300;
+  }
+}
+
+.FeaturedWork__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: calc(100vw / 45);
+  margin-top: 16vw;
+}
+
+.FeaturedWork__item:first-child {
+  margin-top: 0;
+}
+
+.FeaturedWork__break {
+  grid-column: 3/11;
+  order: 5;
+  height: 1px;
+  background-color: var(--color);
+  opacity: 0.2;
+}
+
+.FeaturedWork__item:last-child .FeaturedWork__break {
+  display: none;
+}
+
+/* .FeaturedWork__item:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  height: 1px;
+  background-color: var(--color);
+  opacity: 0.2;
+} */
+
+.FeaturedWork__media:nth-child(odd) {
+  display: none;
+}
+
+.FeaturedWork__media img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/5;
+}
+
+.FeaturedWork__text h3 {
+  font-size: 6vw;
+  font-weight: 300;
+  margin-top: 2.8vw;
+  margin-bottom: 2.8vw;
+}
+
+.FeaturedWork__text p {
+  font-size: 4vw;
+}
+
+@media (min-width: 500px) {
+  .FeaturedWork__text h3 {
+    font-size: 5vw;
+    margin-top: 0;
+  }
+  .FeaturedWork__text p {
+    font-size: 2.4vw;
+  }
+}
+
+@media (min-width: 800px) {
+  .FeaturedWork__text h3 {
+    font-size: 3vw;
+  }
+
+  .FeaturedWork__text p {
+    font-size: 1.6vw;
+  }
+}
+
+.FeaturedWork__link {
+  font-size: 2.2vw;
+  letter-spacing: 0.1vw;
+  height: 100%;
+}
+
+.FeaturedWork__link {
+  margin-left: auto;
+}
+
+.FeaturedWork__link a {
+  display: flex;
+  margin-top: 0.6vw;
+}
+
+.FeaturedWork__link .icon {
+  margin-left: 1vw;
+
+  font-weight: 100;
+  /* overflow: hidden; */
+  /* border: 1px solid red; */
+  white-space: nowrap;
+  /* width: 2.4vw; */
+  /* height: 2.9vw; */
+  /* transform: rotate(45deg); */
+  transform: scale(1.4);
+}
+
+.FeaturedWork__link .arrow {
+  /* padding: 0.4vw; */
+  /* transform: scale(1.4) rotate(-45deg); */
+  /* transition: transform 0.2s ease; */
+}
+
+.FeaturedWork__link a:hover .arrow {
+  /* transform: translate(0vw, -0.3vw) scale(1.6) rotate(-45deg); */
+}
+
+/* START odd list items */
+
+.FeaturedWork__item:nth-child(odd) .FeaturedWork__media:nth-child(even) {
+  order: 1;
+  grid-column: 1/13;
+}
+
+@media (min-width: 500px) {
+  .FeaturedWork__item:nth-child(odd) .FeaturedWork__media:nth-child(even) {
+    order: 1;
+    grid-column: 2/8;
+    grid-column: 2/7;
+    /* border: 1px solid red; */
+  }
+}
+
+.FeaturedWork__item:nth-child(odd) .FeaturedWork__media:nth-child(odd) {
+  order: 4;
+  grid-column: 9/13;
+  grid-column: 8/12;
+  height: 50vw;
+  margin-top: -34vw;
+  margin-top: -28vw;
+  /* border: 1px solid blue; */
+}
+
+.FeaturedWork__item:nth-child(odd) .FeaturedWork__media:nth-child(odd) img {
+  margin-top: auto;
+}
+
+.FeaturedWork__item:nth-child(odd) .FeaturedWork__text {
+  order: 2;
+  grid-column: 1/13;
+}
+
+@media (min-width: 500px) {
+  .FeaturedWork__item:nth-child(odd) .FeaturedWork__text {
+    grid-column: 9/13;
+    grid-column: 8/12;
+  }
+}
+
+.FeaturedWork__item:nth-child(odd) .FeaturedWork__link {
+  order: 3;
+  grid-column: 2/8;
+  grid-column: 2/7;
+}
+
+/* END odd list items */
+
+/* START even list items */
+
+.FeaturedWork__item:nth-child(even) .FeaturedWork__media:nth-child(even) {
+  order: 1;
+  grid-column: 1/13;
+}
+
+@media (min-width: 500px) {
+  .FeaturedWork__item:nth-child(even) .FeaturedWork__media:nth-child(even) {
+    order: 1;
+    grid-column: 7/13;
+  }
+}
+
+@media (min-width: 800px) {
+  .FeaturedWork__item:nth-child(even) .FeaturedWork__media:nth-child(even) {
+    order: 2;
+    grid-column: 6/11;
+    grid-column: 7/12;
+  }
+}
+
+.FeaturedWork__item:nth-child(even) .FeaturedWork__media:nth-child(odd) {
+  order: 3;
+  grid-column: 2/5;
+  grid-column: 2/6;
+  height: 38vw;
+  margin-top: -18vw;
+  margin-top: -20vw;
+}
+
+.FeaturedWork__item:nth-child(even) .FeaturedWork__media:nth-child(odd) img {
+  margin-bottom: auto;
+}
+
+.FeaturedWork__item:nth-child(even) .FeaturedWork__text {
+  order: 2;
+  grid-column: 1/13;
+}
+
+@media (min-width: 500px) {
+  .FeaturedWork__item:nth-child(even) .FeaturedWork__text {
+    order: 1;
+    grid-column: 2/6;
+  }
+}
+
+@media (min-width: 800px) {
+  .FeaturedWork__item:nth-child(even) .FeaturedWork__text {
+    grid-column: 2/5;
+    grid-column: 2/6;
+  }
+}
+
+.FeaturedWork__item:nth-child(even) .FeaturedWork__link {
+  order: 4;
+  grid-column: 6/11;
+}
+
+/* END even list items */
+
+@media (min-width: 800px) {
+  .FeaturedWork__media:nth-child(odd) {
+    display: flex;
+  }
+}
