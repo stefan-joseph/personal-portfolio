@@ -10,7 +10,7 @@ export default function FeaturedWork() {
 
       <ul className="FeaturedWork__list">
         {[{}, {}, {}].map((item, index) => {
-          return <FeaturedWorkCard index={index} />;
+          return <FeaturedWorkCard key={index} index={index} />;
         })}
       </ul>
     </div>
