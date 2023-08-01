@@ -3,24 +3,18 @@
 }
 
 .FeaturedWork__header {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: calc(100vw / 45);
-
-  margin-bottom: 8vw;
+  margin-bottom: 13vw;
 }
 
 .FeaturedWork__header h2 {
   grid-column: 1/13;
-  font-size: 19vw;
-  font-weight: 300;
+  justify-self: center;
 }
 
 @media (min-width: 500px) {
   .FeaturedWork__header h2 {
     grid-column: 2/10;
-    font-size: 17vw;
-    font-weight: 300;
+    justify-self: unset;
   }
 }
 
@@ -36,7 +30,7 @@
   margin-top: 0;
 }
 
-.FeaturedWork__break {
+/* .FeaturedWork__break {
   grid-column: 3/11;
   order: 5;
   height: 1px;
@@ -46,18 +40,6 @@
 
 .FeaturedWork__item:last-child .FeaturedWork__break {
   display: none;
-}
-
-/* .FeaturedWork__item:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  
-  height: 1px;
-  background-color: var(--color);
-  opacity: 0.2;
 } */
 
 .FeaturedWork__media:nth-child(odd) {
@@ -71,73 +53,59 @@
   aspect-ratio: 4/5;
 }
 
+.FeaturedWork__text {
+  display: flex;
+  flex-direction: column;
+}
+
 .FeaturedWork__text h3 {
-  font-size: 6vw;
   font-weight: 300;
-  margin-top: 2.8vw;
+  margin-top: 4vw;
   margin-bottom: 2.8vw;
 }
 
 .FeaturedWork__text p {
-  font-size: 4vw;
 }
 
 @media (min-width: 500px) {
   .FeaturedWork__text h3 {
-    font-size: 5vw;
     margin-top: 0;
   }
   .FeaturedWork__text p {
-    font-size: 2.4vw;
   }
 }
 
 @media (min-width: 800px) {
   .FeaturedWork__text h3 {
-    font-size: 3vw;
+    font-weight: 400;
   }
 
   .FeaturedWork__text p {
-    font-size: 1.6vw;
   }
 }
 
 .FeaturedWork__link {
-  font-size: 2.2vw;
-  letter-spacing: 0.1vw;
-  height: 100%;
-}
-
-.FeaturedWork__link {
+  order: 4;
+  grid-column: 1/13;
+  margin-top: 3vw;
   margin-left: auto;
 }
 
-.FeaturedWork__link a {
-  display: flex;
-  margin-top: 0.6vw;
+@media (min-width: 500px) {
+  .FeaturedWork__link {
+    margin-top: auto;
+    margin-left: unset;
+  }
 }
 
-.FeaturedWork__link .icon {
-  margin-left: 1vw;
-
-  font-weight: 100;
-  /* overflow: hidden; */
-  /* border: 1px solid red; */
-  white-space: nowrap;
-  /* width: 2.4vw; */
-  /* height: 2.9vw; */
-  /* transform: rotate(45deg); */
-  transform: scale(1.4);
+.FeaturedWork__link.desktop {
+  display: none;
 }
 
-.FeaturedWork__link .arrow {
-  /* padding: 0.4vw; */
-  /* transform: scale(1.4) rotate(-45deg); */
-  /* transition: transform 0.2s ease; */
-}
-
-.FeaturedWork__link a:hover .arrow {
-  /* transform: translate(0vw, -0.3vw) scale(1.6) rotate(-45deg); */
+@media (min-width: 800px) {
+  .FeaturedWork__link.desktop {
+    display: initial;
+  }
 }
 
 /* START odd list items */
@@ -151,8 +119,13 @@
   .FeaturedWork__item:nth-child(odd) .FeaturedWork__media:nth-child(even) {
     order: 1;
     grid-column: 2/8;
+    grid-column: 1/7;
+  }
+}
+
+@media (min-width: 800px) {
+  .FeaturedWork__item:nth-child(odd) .FeaturedWork__media:nth-child(even) {
     grid-column: 2/7;
-    /* border: 1px solid red; */
   }
 }
 
@@ -177,15 +150,20 @@
 
 @media (min-width: 500px) {
   .FeaturedWork__item:nth-child(odd) .FeaturedWork__text {
-    grid-column: 9/13;
-    grid-column: 8/12;
+    grid-column: 8/13;
   }
 }
 
-.FeaturedWork__item:nth-child(odd) .FeaturedWork__link {
-  order: 3;
-  grid-column: 2/8;
-  grid-column: 2/7;
+@media (min-width: 800px) {
+  .FeaturedWork__item:nth-child(odd) .FeaturedWork__text {
+    grid-column: 8/12;
+  }
+}
+@media (min-width: 500px) {
+  .FeaturedWork__item:nth-child(odd) .FeaturedWork__link {
+    order: 3;
+    grid-column: 8/13;
+  }
 }
 
 /* END odd list items */
@@ -207,7 +185,6 @@
 @media (min-width: 800px) {
   .FeaturedWork__item:nth-child(even) .FeaturedWork__media:nth-child(even) {
     order: 2;
-    grid-column: 6/11;
     grid-column: 7/12;
   }
 }
@@ -233,20 +210,20 @@
 @media (min-width: 500px) {
   .FeaturedWork__item:nth-child(even) .FeaturedWork__text {
     order: 1;
-    grid-column: 2/6;
+    grid-column: 1/6;
   }
 }
 
 @media (min-width: 800px) {
   .FeaturedWork__item:nth-child(even) .FeaturedWork__text {
-    grid-column: 2/5;
     grid-column: 2/6;
   }
 }
 
-.FeaturedWork__item:nth-child(even) .FeaturedWork__link {
-  order: 4;
-  grid-column: 6/11;
+@media (min-width: 500px) {
+  .FeaturedWork__item:nth-child(even) .FeaturedWork__link {
+    grid-column: 6/11;
+  }
 }
 
 /* END even list items */

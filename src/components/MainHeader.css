@@ -1,18 +1,15 @@
 .MainHeader__header {
-  font-size: 10vw;
   display: flex;
   flex-direction: column;
+  font-weight: 300;
 }
 
 @media screen and (orientation: landscape) {
   .MainHeader__header {
-    font-size: 8vw;
   }
 }
 
 .MainHeader__header-line-1 {
-  padding: 0 0.6vw;
-  font-weight: 100;
   position: relative;
 }
 
@@ -22,7 +19,6 @@
 
 .MainHeader__header-line-2 > div:first-child {
   position: relative;
-  font-size: 0.5em;
   font-weight: 200;
   padding: 0.6vw 2vw 0 0;
   margin-left: auto;
@@ -31,16 +27,13 @@
 
 .MainHeader__header-sub {
   position: relative;
-  font-size: 0.5em;
+  /* font-size: 0.5em; */
   font-weight: 200;
-  padding: 0 0 0 1vw;
+  /* padding: 0 0 0 1.3vw; */
 }
 
 .MainHeader__header-line-2 div:nth-child(2) {
   position: relative;
-  padding: 0.1em;
-  font-weight: 300;
-  letter-spacing: 0.3vw;
 }
 
 .MainHeader__header-line-1:after,

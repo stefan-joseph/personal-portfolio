@@ -73,15 +73,275 @@
   /* Stone 800 */
   /* --color: #292524; */
 
-  --page-margin-sides: 2rem;
+  --accent: #a8a29e;
+  --accent2: #d6d3d1;
+
+  --page-margin-sides: calc(100vw / 12);
   --page-margin-top-bottom: 6rem;
   background-color: var(--color);
+  --font-size-base: 2vw;
+  --font-size-2: calc(var(--font-size-base) * (20 / 15));
+  --font-size-3: calc(var(--font-size-base) * (54 / 15));
+  --font-size-4: calc(var(--font-size-base) * (180 / 15));
+}
+
+:root {
+  --font-s-h0: 25.6vw;
+  --font-lh-h0: 25.6vw;
+  --font-ls-h0: -1.2vw;
+  --font-s-h1: 16vw;
+  --font-lh-h1: 16vw;
+  --font-ls-h1: -0.4vw;
+  --font-s-h2: 7.73333vw;
+  --font-lh-h2: 9.06667vw;
+  --font-ls-h2: -0.26667vw;
+  --font-s-h3: 6.4vw;
+  --font-lh-h3: 8vw;
+  --font-ls-h3: -0.13333vw;
+  --font-s-h4: 4.8vw;
+  --font-lh-h4: 6.4vw;
+  --font-ls-h4: 0vw;
+  --font-s-p: 3.73333vw;
+  --font-lh-p: 5.6vw;
+  --font-ls-p: 0.02667vw;
+  --font-s-p-small: 3.73333vw;
+  --font-lh-p-small: 5.6vw;
+  --font-ls-p-small: 0.02667vw;
+  --font-s-subtitle: 3.2vw;
+  --font-lh-subtitle: 4.26667vw;
+  --font-ls-subtitle: 0.02667vw;
+  --font-s-cta: 4.26667vw;
+  --font-lh-cta: 4.26667vw;
+  --font-ls-cta: 0vw;
+  --font-s-label: 3.73333vw;
+  --font-lh-label: 3.73333vw;
+  --font-ls-label: 0vw;
+
+  --font-s-h0: 22vw;
+  --font-lh-h0: 22vw;
+  --font-ls-h0: -1vw;
+
+  --font-s-h1: 12vw;
+  --font-lh-h1: 12vw;
+  --font-ls-h1: -0.3vw;
+
+  --font-s-h2: 6vw;
+  --font-lh-h2: 8vw;
+  --font-ls-h2: -0.2vw;
+
+  --font-s-h3: 4vw;
+  --font-lh-h3: 8vw;
+  --font-ls-h3: -0.13333vw;
+
+  --font-s-h4: 3vw;
+  --font-lh-h4: 6.4vw;
+  --font-ls-h4: 0vw;
 }
 
 @media (min-width: 800px) {
   :root {
-    --page-margin-sides: calc(100vw / 12);
+    /* --font-s-h0: 17.36111vw;
+    --font-lh-h0: 15.69444vw;
+    --font-ls-h0: -0.79861vw; */
+    --font-s-h0: 17vw;
+    --font-lh-h0: 15vw;
+    --font-ls-h0: -0.75vw;
+    /* --font-s-h1: 10vw;
+    --font-lh-h1: 10vw;
+    --font-ls-h1: -0.34722vw; */
+    --font-s-h1: 10vw;
+    --font-lh-h1: 10vw;
+    --font-ls-h1: -0.34722vw;
+    /* --font-s-h2: 3.61111vw;
+    --font-lh-h2: 4.44444vw;
+    --font-ls-h2: -0.10417vw; */
+    --font-s-h2: 3.61111vw;
+    --font-lh-h2: 4.44444vw;
+    --font-ls-h2: -0.10417vw;
+    /* --font-s-h3: 2.22222vw;
+    --font-lh-h3: 2.77778vw;
+    --font-ls-h3: -0.00694vw; */
+    --font-s-h3: 2.6vw;
+    --font-lh-h3: 2.7vw;
+    --font-ls-h3: 0vw;
+    /* --font-s-h4: 1.7vw;
+    --font-lh-h4: 2.22222vw;
+    --font-ls-h4: 0vw; */
+    --font-s-h4: 1.7vw;
+    --font-lh-h4: 2.22222vw;
+    --font-ls-h4: 0vw;
+    --font-s-p: 1.11111vw;
+    --font-lh-p: 1.66667vw;
+    --font-ls-p: 0.00694vw;
+    --font-s-subtitle: 0.83333vw;
+    --font-lh-subtitle: 1.11111vw;
+    --font-ls-subtitle: 0.00694vw;
+    --font-s-p-small: 0.97222vw;
+    --font-lh-p-small: 1.45833vw;
+    --font-ls-p-small: 0.00694vw;
+    --font-s-cta: 1.11111vw;
+    --font-lh-cta: 1.11111vw;
+    --font-ls-cta: 0vw;
+    --font-s-label: 0.97222vw;
+    --font-lh-label: 0.97222vw;
+    --font-ls-label: 0vw;
   }
+}
+
+.h1 {
+  font-size: 15.8vw;
+  line-height: 15.8vw;
+  letter-spacing: -0.55vw;
+}
+
+.h2 {
+  font-size: 10.2vw;
+  line-height: 10.2vw;
+  letter-spacing: -0.3vw;
+}
+
+.h3 {
+  font-size: 8vw;
+  line-height: 6.4vw;
+  letter-spacing: -0.15vw;
+}
+
+.h4 {
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: 0;
+}
+
+.pg {
+  font-size: 5vw;
+  /* line-height: 2.2vw; */
+  letter-spacing: 0vw;
+}
+
+.pg-small {
+  font-size: 5vw;
+  /* line-height: 2.2vw; */
+  letter-spacing: 0vw;
+}
+
+@media (min-width: 500px) {
+  .h1 {
+    font-size: 15.6vw;
+    line-height: 15.4vw;
+    letter-spacing: -0.45vw;
+  }
+
+  .h2 {
+    font-size: 8vw;
+    line-height: 8vw;
+    letter-spacing: -0.3vw;
+  }
+
+  .h3 {
+    font-size: 3.8vw;
+    line-height: 4.4vw;
+    letter-spacing: -0.1vw;
+  }
+
+  .h4 {
+    font-size: 0;
+    line-height: 0;
+    letter-spacing: 0;
+  }
+
+  .pg {
+    font-size: 2.7vw;
+    /* line-height: 2.2vw; */
+    letter-spacing: 0vw;
+  }
+
+  .pg-small {
+    font-size: 2.7vw;
+    /* line-height: 2.2vw; */
+    letter-spacing: 0vw;
+  }
+}
+
+@media (min-width: 800px) {
+  .h1 {
+    font-size: 13vw;
+    line-height: 13vw;
+    letter-spacing: -0.4vw;
+  }
+
+  .h2 {
+    font-size: 8vw;
+    line-height: 8vw;
+    letter-spacing: -0.3vw;
+  }
+
+  .h3 {
+    font-size: 3.6vw;
+    line-height: 4.4vw;
+    letter-spacing: -0.1vw;
+  }
+
+  .h4 {
+    font-size: 0;
+    line-height: 0;
+    letter-spacing: 0;
+  }
+
+  .pg {
+    font-size: 1.7vw;
+    line-height: 2.2vw;
+    letter-spacing: 0vw;
+  }
+
+  .pg-small {
+    font-size: 1.7vw;
+    line-height: 2.2vw;
+    letter-spacing: 0vw;
+  }
+}
+
+@media (min-width: 1100px) {
+  .h1 {
+    font-size: 13vw;
+    line-height: 13vw;
+    letter-spacing: -0.4vw;
+  }
+
+  .h2 {
+    font-size: 8vw;
+    line-height: 8vw;
+    letter-spacing: -0.3vw;
+  }
+
+  .h3 {
+    font-size: 3.6vw;
+    line-height: 4.4vw;
+    letter-spacing: -0.1vw;
+  }
+
+  .h4 {
+    font-size: 0;
+    line-height: 0;
+    letter-spacing: 0;
+  }
+
+  .pg {
+    font-size: 1.7vw;
+    line-height: 2.2vw;
+    letter-spacing: 0vw;
+  }
+
+  .pg-small {
+    font-size: 1.3vw;
+    /* line-height: 2.2vw; */
+    letter-spacing: 0vw;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: calc(100vw / 45);
 }
 
 * {
@@ -258,21 +518,14 @@ html.has-scroll-dragging {
 }
 
 html:not(.has-scroll-smooth) #page {
-  position: fixed;
-  overflow-y: scroll;
+  position: initial;
+  transform-origin: center var(--scroll-progress);
 }
 
 html.loading #page,
 html.menu-open #page {
   transform: rotate(7deg) scale(1.3) translate(0vw, 40vw);
   opacity: 0.7;
-}
-
-@media (min-width: 500px) {
-  html.loading #page,
-  html.menu-open #page {
-    transform: rotate(7deg) scale(1.3) translate(0vw, 40vw);
-  }
 }
 
 @media (max-width: 299px) {

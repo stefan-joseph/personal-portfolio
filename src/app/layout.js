@@ -19,10 +19,12 @@ export default function RootLayout({ children }) {
         <SmoothScrollProvider>
           <LoadingScreen />
           <Navbar />
-          <div id="page">
-            <div data-scroll-container>
-              <main>{children}</main>
-              <footer></footer>
+          <div>
+            <div id="page">
+              <div data-scroll-container>
+                <main>{children}</main>
+                <footer></footer>
+              </div>
             </div>
           </div>
         </SmoothScrollProvider>

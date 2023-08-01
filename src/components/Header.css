@@ -1,0 +1,91 @@
+.Header__container {
+  display: flex;
+  /* font-size: 14vw; */
+  /* font-size: var(--font-size-4); */
+  font-weight: 300;
+}
+
+.Header__block {
+  display: flex;
+  flex-direction: column;
+}
+
+.Header__line-1.small,
+.Header__line-2.small {
+}
+
+.Header__line-1,
+.Header__line-2 {
+  position: relative;
+  display: flex;
+  margin-left: auto;
+  padding: 0 2vw;
+  /* text-transform: uppercase; */
+  /* text-decoration: underline; */
+  /* overflow: hidden; */
+}
+
+.Header__line-1.h2 {
+  margin-left: unset;
+  margin-right: auto;
+}
+
+.Header__line-2.h1 {
+  text-align: right;
+  margin-left: 18vw;
+  /* font-size: 0.618em; */
+  /* font-size: var(--font-size-3); */
+}
+
+.Header__line-1 div,
+.Header__line-2 div {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.Header__block.is-inview .Header__line-1 div,
+.Header__block.is-inview .Header__line-2 div {
+  transform: none;
+  opacity: 1;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.Header__line-1:before,
+.Header__line-1:after,
+.Header__line-2:before,
+.Header__line-2:after {
+  content: "";
+  position: absolute;
+  background-color: var(--accent);
+  /* opacity: 0.2; */
+  transform: scale(0);
+}
+
+.Header__block.is-inview .Header__line-1:before,
+.Header__block.is-inview .Header__line-1:after,
+.Header__block.is-inview .Header__line-2:before,
+.Header__block.is-inview .Header__line-2:after {
+  transition: transform 2s cubic-bezier(0, 1, 0, 1);
+  transition-delay: 0.5s;
+  transform: scale(1);
+}
+
+.Header__line-1:before,
+.Header__line-2:before {
+  width: 1px;
+  height: 100%;
+  right: 0;
+}
+
+.Header__line-2:before {
+  left: 0;
+}
+
+.Header__line-1:after,
+.Header__line-2:after {
+  height: 1px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}

@@ -1,9 +1,7 @@
-import { SmoothScrollProvider } from "../contexts/SmoothScroll.context.js";
 import Home from "@/pages/Home.js";
 
 export default function Page() {
   return (
-    // <SmoothScrollProvider options={{ smooth: true }}>
     <Home />
     /* <main className={styles.main}>
         <div className={styles.description}>

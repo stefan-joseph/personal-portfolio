@@ -1,0 +1,45 @@
+.Hero__container {
+  position: relative;
+  color: var(--background-color);
+  width: 100vw;
+  min-height: 100vh;
+  padding: 0 var(--page-margin-sides);
+  padding-bottom: var(--page-margin-top-bottom);
+}
+
+.Hero__media {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.Hero__media img {
+  object-fit: cover;
+  object-position: 0% 0%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.Hero__header-container {
+  grid-column: 2/12;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.Hero__description {
+  grid-column: 1/13;
+  z-index: 0;
+}
+
+@media (min-width: 500px) {
+  .Hero__description {
+    grid-column: 2/12;
+  }
+}

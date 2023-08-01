@@ -7,12 +7,10 @@ export default function useScrollListener(listener, ...variables) {
   useEffect(() => {
     if (!scroll) return;
 
-    let page;
     if (document.documentElement.classList.contains("has-scroll-smooth")) {
       scroll.on("scroll", (e) => listener(e.scroll.y, ...variables));
     } else {
-      page = document.getElementById("page");
-      page.addEventListener("scroll", (e) =>
+      window.addEventListener("scroll", (e) =>
         listener(
           Math.abs(e.target.children[0].getBoundingClientRect().y),
           ...variables
@@ -21,7 +19,7 @@ export default function useScrollListener(listener, ...variables) {
     }
 
     return () => {
-      page.removeEventListener("scroll", (e) =>
+      window.removeEventListener("scroll", (e) =>
         listener(
           Math.abs(e.target.children[0].getBoundingClientRect().y),
           ...variables
