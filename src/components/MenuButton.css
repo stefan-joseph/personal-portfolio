@@ -1,0 +1,137 @@
+.Nav__menu-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  padding: calc(var(--top-bottom-padding) + 0.75rem) 0 var(--top-bottom-padding);
+  padding-right: var(--page-margin-sides);
+  align-items: baseline;
+}
+
+@media (min-width: 800px) {
+  .Nav__menu-btn {
+    display: none;
+  }
+}
+
+header.secondary-nav .Nav__menu-btn {
+  display: inline-flex;
+}
+
+@media (min-width: 800px) {
+  header.secondary-nav .Nav__menu-btn {
+    padding: 2vw 2vw 2vw 0;
+  }
+}
+
+.Nav__menu-title {
+  position: relative;
+  overflow: hidden;
+}
+
+.Nav__menu-title div,
+.Nav__menu-title span {
+  transition: transform 500ms, opacity 500ms;
+}
+
+html.menu-open .Nav__menu-title div {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.Nav__menu-title span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+html.menu-open .Nav__menu-title span {
+  transform: none;
+  opacity: 1;
+}
+
+.Nav__icon-container {
+  position: relative;
+  margin-left: 0.5em;
+}
+
+header.secondary-nav .Nav__menu-icon,
+header.secondary-nav .Nav__close-icon {
+  background-color: var(--color);
+}
+
+.Nav__menu-icon,
+.Nav__menu-icon:before,
+.Nav__menu-icon:after,
+.Nav__close-icon,
+.Nav__close-icon:after {
+  width: 1.6em;
+  height: 1px;
+  transition: transform 500ms;
+}
+
+.Nav__menu-icon {
+  background-color: var(--background-color);
+  position: relative;
+  transition-delay: 200ms;
+  transform-origin: left center;
+}
+
+html.menu-open .Nav__menu-icon {
+  transform: scale(0);
+  transition-delay: 200ms;
+}
+
+.Nav__menu-icon:after,
+.Nav__menu-icon:before,
+.Nav__close-icon,
+.Nav__close-icon:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  background-color: inherit;
+}
+
+.Nav__menu-icon:after {
+  transform: translateY(-0.7em) scale(1);
+  transform-origin: left;
+  transition-delay: 400ms;
+}
+
+html.menu-open .Nav__menu-icon:after {
+  transform: translateY(-0.7em) scale(0);
+  transition-delay: 0ms;
+}
+
+.Nav__menu-icon:before {
+  transform: translateY(-0.35em) scale(1);
+  transform-origin: left;
+  transition-delay: 300ms;
+}
+
+html.menu-open .Nav__menu-icon:before {
+  transform: translateY(-0.35em) scale(0);
+  transition-delay: 100ms;
+}
+
+.Nav__close-icon {
+  top: 0;
+  transform: translateY(-0.35em) rotate(45deg) scale(0);
+  transition-delay: 100ms;
+}
+
+html.menu-open .Nav__close-icon {
+  transform: translateY(-0.35em) rotate(45deg) scale(1);
+  transition-delay: 400ms;
+}
+
+.Nav__close-icon:after {
+  transform: rotate(90deg) scale(0);
+}
+
+html.menu-open .Nav__close-icon:after {
+  transform: rotate(90deg) scale(1);
+  transition-delay: 500ms;
+}

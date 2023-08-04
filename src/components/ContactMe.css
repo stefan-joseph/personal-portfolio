@@ -1,5 +1,6 @@
 .Contact__container {
-  padding: 6vw var(--page-margin-sides);
+  padding: var(--page-margin-top-bottom) var(--page-margin-sides)
+    var(--page-margin-top-bottom);
 }
 
 .Contact__header {
@@ -16,11 +17,18 @@
 }
 
 .Contact__list {
-  grid-column: 2/12;
+  grid-column: 1/13;
   display: flex;
   flex-direction: column;
   gap: 1em;
 }
 
-.Contact__item {
+@media (min-width: 800px) {
+  .Contact__container {
+    padding: 0 var(--page-margin-sides) var(--page-margin-top-bottom);
+  }
+
+  .Contact__list {
+    grid-column: 2/12;
+  }
 }

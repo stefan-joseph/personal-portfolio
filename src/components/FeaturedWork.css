@@ -23,7 +23,13 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: calc(100vw / 45);
-  margin-top: 16vw;
+  margin-top: 20vw;
+}
+
+@media (min-width: 800px) {
+  .FeaturedWork__item {
+    margin-top: 12vw;
+  }
 }
 
 .FeaturedWork__item:first-child {

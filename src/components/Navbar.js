@@ -7,6 +7,7 @@ import useScrollListener from "@/hooks/useScrollListener";
 import useScrollIntoView from "@/hooks/useScrollIntoView";
 import useMenu from "@/hooks/useMenu";
 import Logo from "./Logo";
+import MenuButton from "./MenuButton";
 
 export default function Navbar() {
   const { scroll } = useContext(SmoothScrollContext);
@@ -74,23 +75,8 @@ export default function Navbar() {
       >
         <Logo />
       </Link>
-
-      <button
-        className="Nav__menu-btn pg-small"
-        onClick={() => {
-          // document.documentElement.classList.add("menu-open");
-          menu.open();
-        }}
-      >
-        <div className="Nav__menu-title">
-          <div>Menu</div>
-          <span>Close</span>
-        </div>
-        <div className="Nav__icon-container">
-          <div className="Nav__menu-icon"></div>
-          <div className="Nav__close-icon"></div>
-        </div>
-      </button>
+      {/* need to leave handleClick as arrow function for 'this.timeoutID' to work */}
+      <MenuButton handleClick={() => menu.open()} />
       <nav className="Nav__navbar pg-small">
         <ul>
           {links.map(({ name, href }, index) => (
@@ -115,7 +101,6 @@ export default function Navbar() {
           onClick={(e) => {
             e.preventDefault();
             menu.close();
-            // document.documentElement.classList.remove("menu-open");
             setTimeout(() => {
               scroll.scrollTo("top");
             }, 900);
@@ -123,22 +108,8 @@ export default function Navbar() {
         >
           <Logo />
         </Link>
-        <button
-          className="Nav__menu-btn"
-          onClick={() => {
-            menu.close();
-            // document.documentElement.classList.remove("menu-open");
-          }}
-        >
-          <div className="Nav__menu-title">
-            <div>Menu</div>
-            <span>Close</span>
-          </div>
-          <div className="Nav__icon-container">
-            <div className="Nav__menu-icon"></div>
-            <div className="Nav__close-icon"></div>
-          </div>
-        </button>
+        {/* need to leave handleClick as arrow function for 'this.timeoutID' to work */}
+        <MenuButton handleClick={() => menu.close()} />
         <nav>
           <ul>
             {links.map(({ name, href }, index) => (
