@@ -67,8 +67,8 @@ export default function Hero() {
         </h2>
       </div>
       <div className="Hero__description pg">
-        <div>Hey, I'm Stef.</div>
-        <div>I'm a digital developer & designer.</div>
+        <div>Hey, I&apos;m Stef.</div>
+        <div>I&apos;m a digital developer & designer.</div>
         <div>I make things work and</div>
         <div>look good while doing so.</div>
         <div>Let me help make your project</div>
