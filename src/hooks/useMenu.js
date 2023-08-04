@@ -1,21 +1,26 @@
 export default function useMenu() {
   const menu = {
-    root: document.documentElement,
-    hasSmoothScroll:
-      document.documentElement.classList.contains("has-scroll-smooth"),
     open() {
       clearTimeout(this.timeoutID);
 
-      if (!this.hasSmoothScroll) {
+      if (
+        document &&
+        !document.documentElement.classList.contains("has-scroll-smooth")
+      ) {
         const scrollProgress = (
-          (this.root.scrollTop /
-            (this.root.offsetHeight - this.root.clientHeight)) *
+          (document.documentElement.scrollTop /
+            (document.documentElement.offsetHeight -
+              document.documentElement.clientHeight)) *
           100
         ).toFixed(2);
 
-        this.root.style.setProperty("--scroll-progress", `${scrollProgress}%`);
+        document.documentElement.style.setProperty(
+          "--scroll-progress",
+          `${scrollProgress}%`
+        );
 
-        const scrollTop = window.pageYOffset || this.root.scrollTop;
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
 
         window.onscroll = function () {
           console.log("close menu");
@@ -23,19 +28,22 @@ export default function useMenu() {
         };
       }
 
-      this.root.classList.add("menu-open");
+      document.documentElement.classList.add("menu-open");
     },
 
     close() {
-      if (!this.hasSmoothScroll) {
+      if (
+        document &&
+        !document.documentElement.classList.contains("has-scroll-smooth")
+      ) {
         window.onscroll = function () {};
 
         this.timeoutID = setTimeout(() => {
-          this.root.style.removeProperty("--scroll-progress");
+          document.documentElement.style.removeProperty("--scroll-progress");
         }, 1000);
       }
 
-      this.root.classList.remove("menu-open");
+      document.documentElement.classList.remove("menu-open");
     },
   };
 
