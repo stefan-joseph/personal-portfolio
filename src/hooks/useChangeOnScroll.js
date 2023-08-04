@@ -4,7 +4,7 @@ import useIsInViewport from "./useIsInViewport";
 import useScrollListener from "./useScrollListener";
 
 export default function useChangeOnScroll(ref, options) {
-  const { scroll } = useContext(SmoothScrollContext);
+  // const { scroll } = useContext(SmoothScrollContext);
 
   // returns ref indicating if element is in viewport (check with ref.current)
   const elementToTrack = useRef(ref.current);

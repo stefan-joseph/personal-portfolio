@@ -6,7 +6,7 @@ import LinkWithIcon from "./LinkWithIcon";
 
 export default function FeaturedWorkCard({
   index,
-  details: { title, href, img1 },
+  details: { title, href, img1, img2 },
 }) {
   const linkRef = useRef();
 
@@ -32,7 +32,7 @@ export default function FeaturedWorkCard({
         <Image src={img1} alt="work" priority />
       </div>
       <div className="FeaturedWork__media">
-        <Image src={Leaf} alt="work" priority ref={linkRef} />
+        <Image src={img2} alt="work" priority ref={linkRef} />
       </div>
       <div className="FeaturedWork__link desktop pg">
         <LinkWithIcon href={href} icon={<span>↗</span>} title="Visit site" />

@@ -85,6 +85,12 @@
   --font-size-4: calc(var(--font-size-base) * (180 / 15));
 }
 
+@media (min-width: 1200px) {
+  :root {
+    --page-margin-sides: calc(100vw / 8);
+  }
+}
+
 :root {
   --font-s-h0: 25.6vw;
   --font-lh-h0: 25.6vw;
@@ -373,11 +379,6 @@ body {
 
 main {
   background-color: #fbf7f0;
-}
-
-footer {
-  height: 30vw;
-  background-color: var(--color);
 }
 
 a {

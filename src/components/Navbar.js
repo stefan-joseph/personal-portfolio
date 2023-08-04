@@ -76,14 +76,20 @@ export default function Navbar() {
       </Link>
 
       <button
-        className="Nav__menu-btn"
+        className="Nav__menu-btn pg-small"
         onClick={() => {
           // document.documentElement.classList.add("menu-open");
           menu.open();
         }}
       >
-        <span>Menu</span>
-        <div className="Nav__menu-icon"></div>
+        <div className="Nav__menu-title">
+          <div>Menu</div>
+          <span>Close</span>
+        </div>
+        <div className="Nav__icon-container">
+          <div className="Nav__menu-icon"></div>
+          <div className="Nav__close-icon"></div>
+        </div>
       </button>
       <nav className="Nav__navbar pg-small">
         <ul>
@@ -124,8 +130,14 @@ export default function Navbar() {
             // document.documentElement.classList.remove("menu-open");
           }}
         >
-          <span>Menu</span>
-          <div className="Nav__menu-icon"></div>
+          <div className="Nav__menu-title">
+            <div>Menu</div>
+            <span>Close</span>
+          </div>
+          <div className="Nav__icon-container">
+            <div className="Nav__menu-icon"></div>
+            <div className="Nav__close-icon"></div>
+          </div>
         </button>
         <nav>
           <ul>

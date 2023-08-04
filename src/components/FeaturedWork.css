@@ -51,6 +51,13 @@
   width: 100%;
   height: auto;
   aspect-ratio: 4/5;
+  border-radius: 0.3rem;
+}
+
+@media (min-width: 1100px) {
+  .FeaturedWork__media img {
+    border-radius: 0.4vw;
+  }
 }
 
 .FeaturedWork__text {
@@ -91,6 +98,10 @@
   margin-left: auto;
 }
 
+.FeaturedWork__link.desktop {
+  display: none;
+}
+
 @media (min-width: 500px) {
   .FeaturedWork__link {
     margin-top: auto;
@@ -98,13 +109,14 @@
   }
 }
 
-.FeaturedWork__link.desktop {
-  display: none;
-}
-
 @media (min-width: 800px) {
+  .FeaturedWork__text .FeaturedWork__link {
+    display: none;
+  }
+
   .FeaturedWork__link.desktop {
     display: initial;
+    margin-top: 1vw;
   }
 }
 
@@ -131,12 +143,17 @@
 
 .FeaturedWork__item:nth-child(odd) .FeaturedWork__media:nth-child(odd) {
   order: 4;
-  grid-column: 9/13;
   grid-column: 8/12;
-  height: 50vw;
-  margin-top: -34vw;
-  margin-top: -28vw;
+  height: 42vw;
+  margin-top: -20vw;
   /* border: 1px solid blue; */
+}
+
+@media (min-width: 1200px) {
+  .FeaturedWork__item:nth-child(odd) .FeaturedWork__media:nth-child(odd) {
+    height: 36vw;
+    margin-top: -16vw;
+  }
 }
 
 .FeaturedWork__item:nth-child(odd) .FeaturedWork__media:nth-child(odd) img {
@@ -159,10 +176,11 @@
     grid-column: 8/12;
   }
 }
-@media (min-width: 500px) {
+@media (min-width: 800px) {
   .FeaturedWork__item:nth-child(odd) .FeaturedWork__link {
     order: 3;
-    grid-column: 8/13;
+    grid-column: 2/7;
+    margin-left: auto;
   }
 }
 
@@ -191,11 +209,17 @@
 
 .FeaturedWork__item:nth-child(even) .FeaturedWork__media:nth-child(odd) {
   order: 3;
-  grid-column: 2/5;
   grid-column: 2/6;
-  height: 38vw;
+  height: 42vw;
   margin-top: -18vw;
-  margin-top: -20vw;
+  /* border: 1px solid blue; */
+}
+
+@media (min-width: 1200px) {
+  .FeaturedWork__item:nth-child(even) .FeaturedWork__media:nth-child(odd) {
+    height: 36vw;
+    margin-top: -13.8vw;
+  }
 }
 
 .FeaturedWork__item:nth-child(even) .FeaturedWork__media:nth-child(odd) img {
@@ -222,7 +246,7 @@
 
 @media (min-width: 500px) {
   .FeaturedWork__item:nth-child(even) .FeaturedWork__link {
-    grid-column: 6/11;
+    grid-column: 7/12;
   }
 }
 

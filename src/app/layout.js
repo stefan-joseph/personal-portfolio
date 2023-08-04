@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import { SmoothScrollProvider } from "@/contexts/SmoothScroll.context";
 import LoadingScreen from "@/components/LoadingScreen";
 import { neueMontreal } from "@/assets/fonts/fonts";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Stefan Joseph's Portfolio",
@@ -19,13 +20,13 @@ export default function RootLayout({ children }) {
         <SmoothScrollProvider>
           <LoadingScreen />
           <Navbar />
-          <div>
-            <div id="page">
-              <div data-scroll-container>
-                <main>{children}</main>
-                <footer></footer>
-              </div>
+          {/* <div> */}
+          <div id="page">
+            <div data-scroll-container>
+              <main>{children}</main>
+              <Footer />
             </div>
+            {/* </div> */}
           </div>
         </SmoothScrollProvider>
       </body>

@@ -68,8 +68,9 @@ export default function Hero() {
       </div>
       <div className="Hero__description pg">
         <div>Hey, I'm Stef.</div>
-        <div>I'm a digital designer & developer.</div>
-        <div>I make things work and look good.</div>
+        <div>I'm a digital developer & designer.</div>
+        <div>I make things work and</div>
+        <div>look good while doing so.</div>
         <div>Let me help make your project</div>
         <div>work and look good too.</div>
       </div>

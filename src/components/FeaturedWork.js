@@ -3,6 +3,8 @@ import FeaturedWorkCard from "./FeaturedWorkCard";
 import Header from "./Header";
 import AirbnSeaImg1 from "../../public/boat2.jpg";
 import EllaClothingImg1 from "../../public/ellaclothing.jpeg";
+import Mockup1 from "../../public/AirbnseaPhoneMockup.jpg";
+import Mockup2 from "../../public/EllaClothingPhoneMockup.jpg";
 
 export default function FeaturedWork() {
   return (
@@ -19,11 +21,13 @@ export default function FeaturedWork() {
             title: "Airbnsea",
             href: "https://airbnsea.netlify.app",
             img1: AirbnSeaImg1,
+            img2: Mockup1,
           },
           {
             title: "Ella Clothing",
             href: "https://ella-clothing.fly.dev",
             img1: EllaClothingImg1,
+            img2: Mockup2,
           },
         ].map((item, index) => {
           return <FeaturedWorkCard key={index} index={index} details={item} />;

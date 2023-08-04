@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 1.67em;
+  width: 2.9em;
 }
 
 .Logo__container div:first-child {

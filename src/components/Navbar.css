@@ -4,7 +4,6 @@ header {
   z-index: 1;
   color: var(--background-color);
   opacity: 1;
-  font-weight: 200;
   transition-timing-function: ease;
   --transition-timing: 300ms;
   --top-bottom-padding: 0.75rem;
@@ -75,69 +74,124 @@ header.secondary-nav .Nav__menu-btn {
 
 @media (min-width: 800px) {
   header.secondary-nav .Nav__menu-btn {
-    position: absolute;
     padding: 2vw 2vw 2vw 0;
   }
 }
 
-@media (min-width: 800px) and (max-width: 1099px) {
-  header.secondary-nav .Nav__menu-btn {
-    --right: calc((((100vw / 12) - (var(--tablet-icon-width))) / 4) * 3);
-    --left: calc((((100vw / 12) - (var(--tablet-icon-width))) / 4));
-    padding: 3.6vw var(--right) 2vw var(--left);
-  }
-  header.secondary-nav .Nav__menu-btn span {
-    display: none;
-  }
+.Nav__menu-title {
+  position: relative;
+  overflow: hidden;
+}
+
+.Nav__menu-title div,
+.Nav__menu-title span {
+  transition: transform 500ms, opacity 500ms;
+}
+
+html.menu-open .Nav__menu-title div {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.Nav__menu-title span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+html.menu-open .Nav__menu-title span {
+  transform: none;
+  opacity: 1;
+}
+
+.Nav__icon-container {
+  position: relative;
+  margin-left: 0.5em;
+}
+
+header.secondary-nav .Nav__menu-icon,
+header.secondary-nav .Nav__close-icon {
+  background-color: var(--color);
 }
 
 .Nav__menu-icon {
-  margin-left: 0.5rem;
-  background-color: var(--background-color);
+  position: relative;
+  transition: transform 500ms;
+  transition-delay: 200ms;
+  transform-origin: left center;
 }
 
-header.secondary-nav .Nav__menu-icon {
-  background-color: var(--color);
+html.menu-open .Nav__menu-icon {
+  transform: scale(0);
+  transition-delay: 200ms;
 }
 
 .Nav__menu-icon,
 .Nav__menu-icon:before,
-.Nav__menu-icon:after {
-  position: relative;
-  width: 1.5rem;
-  height: 0.5px;
+.Nav__menu-icon:after,
+.Nav__close-icon,
+.Nav__close-icon:after {
+  width: 1.6em;
+  height: 1px;
+  /* transition: transform 500ms; */
 }
 
 .Nav__menu-icon:after,
-.Nav__menu-icon:before {
+.Nav__menu-icon:before,
+.Nav__close-icon,
+.Nav__close-icon:after {
   content: "";
   position: absolute;
   left: 0;
-  transform: translateY(-5px);
   background-color: inherit;
 }
-.Nav__menu-icon:before {
-  transform: translateY(-10px);
+
+.Nav__menu-icon:after {
+  transform: translateY(-0.7em) scale(1);
+  transform-origin: left;
+  transition: transform 500ms;
+  transition-delay: 400ms;
 }
 
-@media (min-width: 800px) and (max-width: 1099px) {
-  .Nav__menu-icon {
-    margin-left: 0;
-  }
+html.menu-open .Nav__menu-icon:after {
+  transform: translateY(-0.7em) scale(0);
+  transition-delay: 0ms;
+}
 
-  .Nav__menu-icon,
-  .Nav__menu-icon:before,
-  .Nav__menu-icon:after {
-    width: var(--tablet-icon-width);
-    height: 0.04vw;
-  }
+.Nav__menu-icon:before {
+  transform: translateY(-0.35em) scale(1);
+  transform-origin: left;
+  transition: transform 500ms;
+  transition-delay: 300ms;
+}
 
-  .Nav__menu-icon:after {
-    transform: translateY(-0.8vw);
-  }
-  .Nav__menu-icon:before {
-    transform: translateY(-1.6vw);
-  }
+html.menu-open .Nav__menu-icon:before {
+  transform: translateY(-0.35em) scale(0);
+  transition-delay: 100ms;
+}
+
+.Nav__close-icon {
+  top: 0;
+  transform: translateY(-0.35em) rotate(45deg) scale(0);
+  transition: transform 500ms;
+  transition-delay: 100ms;
+}
+
+html.menu-open .Nav__close-icon {
+  transform: translateY(-0.35em) rotate(45deg) scale(1);
+  transition-delay: 400ms;
+}
+
+.Nav__close-icon:after {
+  transform: rotate(90deg) scale(0);
+  transition: transform 500ms;
+}
+
+html.menu-open .Nav__close-icon:after {
+  transform: rotate(90deg) scale(1);
+  transition-delay: 500ms;
 }
 
 .Nav__navbar {
@@ -145,10 +199,8 @@ header.secondary-nav .Nav__menu-icon {
   position: absolute;
   top: 0;
   right: 0;
-  padding: calc(var(--top-bottom-padding) + 0.75rem) 0 var(--top-bottom-padding);
+  padding: calc(var(--top-bottom-padding) + 0.75em) 0 var(--top-bottom-padding);
   padding-right: var(--page-margin-sides);
-  /* font-size: 1.3vw; */
-  font-weight: 300;
 }
 
 @media (min-width: 800px) {
@@ -216,7 +268,9 @@ header aside {
 }
 
 header aside .Nav__menu-icon,
-header.secondary-nav aside .Nav__menu-icon {
+header.secondary-nav aside .Nav__menu-icon,
+header aside .Nav__close-icon,
+header.secondary-nav aside .Nav__close-icon {
   background-color: var(--background-color);
 }
 
@@ -233,11 +287,5 @@ header aside ul {
 
 header aside li {
   grid-column: 1/13;
-  /* font-size: 10vmax; */
   text-align: right;
-}
-
-header aside li a {
-  /* padding: 10vw 0; */
-  /* text-align: right; */
 }
