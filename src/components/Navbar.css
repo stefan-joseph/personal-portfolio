@@ -78,11 +78,11 @@ header.secondary-nav .Nav__logo {
   gap: 2rem;
 }
 
-.Nav__navbar a {
+/* .Nav__navbar a {
   position: relative;
-}
+} */
 
-.Nav__navbar a:after {
+/* .Nav__navbar a:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -93,14 +93,14 @@ header.secondary-nav .Nav__logo {
   opacity: 0.8;
   will-change: transform;
   transform: scale(0);
-  transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
-  transform-origin: right center;
-}
+  transition: transform 0.5s cubic-bezier(0.9, 0, 0.1, 1);
+  transform-origin: center right;
+} */
 
-.Nav__navbar a:hover:after {
+/* .Nav__navbar a:hover:after {
   transform: scale(1);
-  transform-origin: left center;
-}
+  transform-origin: center left;
+} */
 
 header aside {
   position: absolute;
@@ -146,4 +146,14 @@ header aside ul {
 header aside li {
   grid-column: 1/13;
   text-align: right;
+}
+
+.Nav__scroll-direction {
+  position: absolute;
+  font-weight: 200;
+  bottom: -97vh;
+  right: var(--page-margin-sides);
+}
+header.secondary-nav .Nav__scroll-direction {
+  display: none;
 }

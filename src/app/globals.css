@@ -85,7 +85,7 @@
   --font-size-4: calc(var(--font-size-base) * (180 / 15));
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   :root {
     --page-margin-sides: calc(100vw / 8);
   }
@@ -207,15 +207,15 @@
 }
 
 .h3 {
-  font-size: 8vw;
-  line-height: 6.4vw;
+  font-size: 7vw;
+  line-height: 7vw;
   letter-spacing: -0.15vw;
 }
 
 .h4 {
-  font-size: 0;
-  line-height: 0;
-  letter-spacing: 0;
+  font-size: 5vw;
+  /* line-height: 5vw; */
+  letter-spacing: -0.15vw;
 }
 
 .pg {
@@ -244,15 +244,15 @@
   }
 
   .h3 {
-    font-size: 3.8vw;
+    font-size: 4.4vw;
     line-height: 4.4vw;
     letter-spacing: -0.1vw;
   }
 
   .h4 {
-    font-size: 0;
-    line-height: 0;
-    letter-spacing: 0;
+    font-size: 3.8vw;
+    line-height: 4.4vw;
+    letter-spacing: -0.1vw;
   }
 
   .pg {
@@ -270,8 +270,8 @@
 
 @media (min-width: 800px) {
   .h1 {
-    font-size: 13vw;
-    line-height: 13vw;
+    font-size: 15.55vw;
+    line-height: 15.55vw;
     letter-spacing: -0.4vw;
   }
 
@@ -288,13 +288,13 @@
   }
 
   .h4 {
-    font-size: 0;
-    line-height: 0;
-    letter-spacing: 0;
+    font-size: 1.9vw;
+    line-height: 2.2vw;
+    letter-spacing: 0vw;
   }
 
   .pg {
-    font-size: 1.7vw;
+    font-size: 1.9vw;
     line-height: 2.2vw;
     letter-spacing: 0vw;
   }
@@ -308,7 +308,7 @@
 
 @media (min-width: 1100px) {
   .h1 {
-    font-size: 13vw;
+    font-size: 14.1vw;
     line-height: 13vw;
     letter-spacing: -0.4vw;
   }
@@ -326,9 +326,9 @@
   }
 
   .h4 {
-    font-size: 0;
-    line-height: 0;
-    letter-spacing: 0;
+    font-size: 1.7vw;
+    line-height: 2.2vw;
+    letter-spacing: 0vw;
   }
 
   .pg {
@@ -348,6 +348,30 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: calc(100vw / 45);
+}
+
+.link {
+  position: relative;
+}
+
+.link:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0.06em;
+  width: 100%;
+  background-color: var(--background-color);
+  opacity: 0.8;
+  will-change: transform;
+  transform: scale(0);
+  transition: transform 0.5s cubic-bezier(0.9, 0, 0.1, 1);
+  transform-origin: center right;
+}
+
+.link:hover:after {
+  transform: scale(1);
+  transform-origin: center left;
 }
 
 * {

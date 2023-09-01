@@ -2,6 +2,17 @@
   position: relative;
   display: inline-flex;
   align-items: center;
+  --transition-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+  --transition-duration: 0.8s;
+  --color-1: var(--color);
+  --color-2: var(--background-color);
+  --circle-size: 40%;
+}
+
+.LinkWithIcon__link.is-light {
+  --color-1: var(--background-color);
+  --color-2: var(--color);
+  --circle-size: 36%;
 }
 
 .LinkWithIcon__icon {
@@ -11,11 +22,12 @@
   width: 2em;
   height: 2em;
   margin-top: 0.1em;
-  clip-path: circle(40% at 50% 50%);
-  border: 1px solid var(--color);
-  background-color: var(--color);
-  color: var(--background-color);
-  transition: clip-path 1s cubic-bezier(1, 0, 0, 1);
+  clip-path: circle(var(--circle-size) at 50% 50%);
+  border: 1px solid var(--color-1);
+  background-color: var(--color-1);
+  color: var(--color-2);
+  transition: clip-path var(--transition-duration)
+    var(--transition-timing-function);
 }
 
 .LinkWithIcon__link:hover .LinkWithIcon__icon {
@@ -24,7 +36,8 @@
 
 .LinkWithIcon__icon > * {
   font-size: 0.8em;
-  transition: transform 1s cubic-bezier(1, 0, 0, 1);
+  transition: transform var(--transition-duration)
+    var(--transition-timing-function);
 }
 
 .LinkWithIcon__link:hover .LinkWithIcon__icon > * {
@@ -34,13 +47,13 @@
 .LinkWithIcon__title {
   position: relative;
   margin-left: 1vw;
-  transition: transform 1s cubic-bezier(1, 0, 0, 1);
-  background-color: var(--background-color);
+  transition: transform var(--transition-duration)
+    var(--transition-timing-function);
   z-index: 1;
 }
 
 .LinkWithIcon__link:hover .LinkWithIcon__title {
-  transform: translateX(-1.1em);
+  transform: translateX(-1.2em);
 }
 
 .LinkWithIcon__title:after {
@@ -51,7 +64,8 @@
   height: 1px;
   width: 100%;
   background-color: var(--accent);
-  transition: transform 1s cubic-bezier(1, 0, 0, 1);
+  transition: transform var(--transition-duration)
+    var(--transition-timing-function);
   transform-origin: left;
   transform: scaleX(1);
 }
@@ -61,23 +75,28 @@
 }
 
 .LinkWithIcon__arrow {
-  transition: transform 1s, width 1s, margin 1s;
-  transition-timing-function: cubic-bezier(1, 0, 0, 1);
-  margin-left: 0em;
-  width: 0em;
+  transition: transform var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+  margin-left: 0.5em;
+  overflow: hidden;
+
+  /* border: 1px solid red; */
 }
 
 .LinkWithIcon__link:hover .LinkWithIcon__arrow {
+  transform: translateX(-1.2em);
 }
 
 .LinkWithIcon__arrow div {
   font-weight: 100;
   font-size: 1em;
-  margin-left: -1.8em;
-  transition: transform 1s cubic-bezier(1, 0, 0, 1);
-  transform: scale(1);
+  transition: transform var(--transition-duration)
+    var(--transition-timing-function);
+  transform: translateX(-2em);
+
+  /* border: 1px solid blue; */
 }
 
 .LinkWithIcon__link:hover .LinkWithIcon__arrow div {
-  transform: translateX(1em) scale(1);
+  transform: translateX(0em);
 }

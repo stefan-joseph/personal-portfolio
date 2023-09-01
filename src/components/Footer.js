@@ -1,6 +1,6 @@
 "use client";
 import "./Footer.css";
-import data from "@/data/portfolio.json";
+import { data } from "@/data/portfolio.js";
 import Logo from "./Logo";
 import Link from "next/link";
 import useIsInViewport from "@/hooks/useIsInViewport";
@@ -30,7 +30,9 @@ export default function Footer() {
         <ul>
           {data.menu.map(({ title }, index) => (
             <li key={index}>
-              <Link href="/">{title}</Link>
+              <Link href="/" className="link">
+                {title}
+              </Link>
             </li>
           ))}
         </ul>

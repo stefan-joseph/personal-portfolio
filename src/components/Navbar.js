@@ -83,6 +83,7 @@ export default function Navbar() {
             <li key={name}>
               <Link
                 href="/"
+                className="link"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollIntoView(href);
@@ -131,6 +132,9 @@ export default function Navbar() {
           </ul>
         </nav>
       </aside>
+      <div className="Nav__scroll-direction h3">
+        <div>↓</div>
+      </div>
     </header>
   );
 }

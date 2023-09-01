@@ -155,7 +155,7 @@
   /* border: 1px solid blue; */
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   .FeaturedWork__item:nth-child(odd) .FeaturedWork__media:nth-child(odd) {
     height: 36vw;
     margin-top: -16vw;
@@ -221,7 +221,7 @@
   /* border: 1px solid blue; */
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   .FeaturedWork__item:nth-child(even) .FeaturedWork__media:nth-child(odd) {
     height: 36vw;
     margin-top: -13.8vw;
