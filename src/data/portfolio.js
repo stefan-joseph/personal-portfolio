@@ -6,7 +6,7 @@ export const data = {
   menu: [
     {
       title: "About",
-      href: "work-scroll-target",
+      href: "about-scroll-target",
     },
     {
       title: "Work",
@@ -14,7 +14,7 @@ export const data = {
     },
     {
       title: "Contact",
-      href: "work-scroll-target",
+      href: "contact-scroll-target",
     },
   ],
   contact: [

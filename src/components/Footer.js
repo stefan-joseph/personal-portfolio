@@ -6,12 +6,15 @@ import Link from "next/link";
 import useIsInViewport from "@/hooks/useIsInViewport";
 import useScrollListener from "@/hooks/useScrollListener";
 import { useRef } from "react";
+import useScrollIntoView from "@/hooks/useScrollIntoView";
 
 export default function Footer() {
   const footerBlockRef = useRef();
   const footerRef = useRef();
 
   const isInViewport = useIsInViewport(footerRef);
+
+  const scrollIntoView = useScrollIntoView();
 
   useScrollListener((scrollY) => {
     if (!isInViewport.current) return;
@@ -28,9 +31,16 @@ export default function Footer() {
     <footer className="Footer__container" ref={footerRef}>
       <div className="Footer__block grid pg" ref={footerBlockRef}>
         <ul>
-          {data.menu.map(({ title }, index) => (
+          {data.menu.map(({ title, href }, index) => (
             <li key={index}>
-              <Link href="/" className="link">
+              <Link
+                href="/"
+                className="link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollIntoView(href);
+                }}
+              >
                 {title}
               </Link>
             </li>

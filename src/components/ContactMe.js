@@ -7,7 +7,7 @@ export default function ContactMe() {
   console.log("data", data);
   return (
     <div className="Contact__container grid">
-      <div className="Contact__header">
+      <div id="contact-scroll-target" className="Contact__header">
         <h2>
           <Header line1="Contact" line2="Me" line2IsSmall />
         </h2>

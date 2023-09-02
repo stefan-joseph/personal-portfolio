@@ -3,12 +3,7 @@
   background-color: var(--color);
   color: var(--background-color);
   position: relative;
-  z-index: -1;
-}
-
-.Footer__block {
-  /* transform: translateY(-100%); */
-  /* border: 1px solid red; */
+  /* z-index: -1; */
 }
 
 .Footer__container ul {

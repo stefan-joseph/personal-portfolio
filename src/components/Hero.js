@@ -73,14 +73,18 @@ export default function Hero() {
           </div>
         </h2>
       </div>
-      <div className="Hero__introduction h4" style={{ fontWeight: 300 }}>
+      <div
+        id="about-scroll-target"
+        className="Hero__introduction h4"
+        style={{ fontWeight: 300 }}
+      >
         <div>Hey, I&apos;m Stef.</div>
         <div>I&apos;m a digital developer & designer.</div>
       </div>
       <div className="Hero__description h4">
         <div>I have a knack for making things work.</div>
         <div>And just because something works</div>
-        <div>doesn't mean it shouldn't look good.</div>
+        <div>doesn&apos;t mean it shouldn&apos;t look good.</div>
         <div>I do that too.</div>
         <div>Let me help you make your project</div>
         <div>work and look good too.</div>

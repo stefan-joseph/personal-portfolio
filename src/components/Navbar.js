@@ -8,6 +8,7 @@ import useScrollIntoView from "@/hooks/useScrollIntoView";
 import useMenu from "@/hooks/useMenu";
 import Logo from "./Logo";
 import MenuButton from "./MenuButton";
+import { data } from "@/data/portfolio.js";
 
 export default function Navbar() {
   const { scroll } = useContext(SmoothScrollContext);
@@ -56,12 +57,6 @@ export default function Navbar() {
 
   useScrollListener(changeHandler, headerRef);
 
-  const links = [
-    { name: "About", href: "work-scroll-target" },
-    { name: "Work", href: "work-scroll-target" },
-    { name: "Contact", href: "work-scroll-target" },
-  ];
-
   return (
     <header ref={headerRef}>
       <Link
@@ -79,8 +74,8 @@ export default function Navbar() {
       <MenuButton handleClick={() => menu.open()} />
       <nav className="Nav__navbar pg-small">
         <ul>
-          {links.map(({ name, href }, index) => (
-            <li key={name}>
+          {data.menu.map(({ title, href }, index) => (
+            <li key={title}>
               <Link
                 href="/"
                 className="link"
@@ -89,7 +84,7 @@ export default function Navbar() {
                   scrollIntoView(href);
                 }}
               >
-                {name}
+                {title}
               </Link>
             </li>
           ))}
@@ -113,8 +108,8 @@ export default function Navbar() {
         <MenuButton handleClick={() => menu.close()} />
         <nav>
           <ul>
-            {links.map(({ name, href }, index) => (
-              <li key={name} className="h1">
+            {data.menu.map(({ title, href }, index) => (
+              <li key={title} className="h1">
                 <Link
                   href="/"
                   onClick={(e) => {
@@ -125,7 +120,7 @@ export default function Navbar() {
                     }, 900);
                   }}
                 >
-                  {name}
+                  {title}
                 </Link>
               </li>
             ))}
