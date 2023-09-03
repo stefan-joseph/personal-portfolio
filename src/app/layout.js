@@ -12,10 +12,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      // className="loading"
-    >
+    <html lang="en" className="loading">
       <body className={neueMontreal.className}>
         <SmoothScrollProvider>
           <LoadingScreen />

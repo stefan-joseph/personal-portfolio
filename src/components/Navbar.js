@@ -93,7 +93,7 @@ export default function Navbar() {
       <aside>
         <Link
           href="/"
-          className="Nav__logo h3"
+          className="Nav__logo"
           onClick={(e) => {
             e.preventDefault();
             menu.close();

@@ -2,6 +2,7 @@
 import "./LoadingScreen.css";
 import useInterval from "@/hooks/useInterval";
 import { useEffect, useState } from "react";
+import Logo from "./Logo";
 
 export default function LoadingScreen() {
   const [progress, setProgress] = useState(0);
@@ -28,12 +29,10 @@ export default function LoadingScreen() {
         style={{ "--enlarge": `${1 + (progress / 100) * (progress / 100)}` }}
       >
         <div className="icon">
-          <div>STEFAN</div>
-          <div>JOSEPH</div>
+          <Logo />
         </div>
         <div className="icon progress" style={{ width: `${progress}%` }}>
-          <div>STEFAN</div>
-          <div>JOSEPH</div>
+          <Logo />
         </div>
       </div>
     </aside>

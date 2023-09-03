@@ -24,13 +24,6 @@ export default function Hero() {
 
   useChangeOnScroll(line2Part1Ref, { rate: 0.02 });
 
-  // useChangeOnScroll(title2Part2RefInner, {
-  //   rate: 0.1,
-  //   changeProperty: (ref, scrollY, rate) => {
-  //     ref.current.style.marginTop = `${scrollY * rate}px`;
-  //   },
-  // });
-
   useChangeOnScroll(title2Part2RefInner, { rate: -0.1 });
 
   return (
@@ -50,7 +43,7 @@ export default function Hero() {
             className="MainHeader__header-sub h3"
             style={{ marginLeft: "-.078em", marginBottom: "-.1em" }}
           >
-            Digital
+            <div>Digital</div>
           </div>
           <div className="MainHeader__header-line-1 h1">
             <div
