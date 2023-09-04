@@ -7,12 +7,14 @@
   --color-1: var(--color);
   --color-2: var(--background-color);
   --circle-size: 40%;
+  --icon-font-size: 0.9em;
 }
 
 .LinkWithIcon__link.is-light {
   --color-1: var(--background-color);
   --color-2: var(--color);
   --circle-size: 36%;
+  --icon-font-size: 0.8em;
 }
 
 .LinkWithIcon__icon {
@@ -35,7 +37,7 @@
 }
 
 .LinkWithIcon__icon > * {
-  font-size: 0.8em;
+  font-size: var(--icon-font-size);
   transition: transform var(--transition-duration)
     var(--transition-timing-function);
 }
