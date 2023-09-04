@@ -6,7 +6,7 @@ import LinkWithIcon from "./LinkWithIcon";
 
 export default function FeaturedWorkCard({
   index,
-  details: { title, href, img1, img2 },
+  details: { title, href, img1, img2, description },
 }) {
   const linkRef = useRef();
 
@@ -18,12 +18,7 @@ export default function FeaturedWorkCard({
     <li className="FeaturedWork__item">
       <div className="FeaturedWork__text">
         <h3 className="h3">{title}</h3>
-        <p className="pg">
-          Highlights of cases that we passionately built with forward-thinking
-          clients and friends over the years. Highlights of cases that we
-          passionately built with forward-thinking clients and friends over the
-          years.
-        </p>
+        <p className="pg">{description}</p>
         <div className="FeaturedWork__link pg">
           <LinkWithIcon href={href} icon={<span>↗</span>} title="Visit site" />
         </div>

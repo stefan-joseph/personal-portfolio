@@ -151,14 +151,14 @@
   order: 4;
   grid-column: 8/12;
   height: 42vw;
-  margin-top: -20vw;
+  margin-top: -19vw;
   /* border: 1px solid blue; */
 }
 
 @media (min-width: 1100px) {
   .FeaturedWork__item:nth-child(odd) .FeaturedWork__media:nth-child(odd) {
     height: 36vw;
-    margin-top: -16vw;
+    margin-top: -14vw;
   }
 }
 
@@ -217,14 +217,14 @@
   order: 3;
   grid-column: 2/6;
   height: 42vw;
-  margin-top: -18vw;
+  margin-top: -11.6vw;
   /* border: 1px solid blue; */
 }
 
 @media (min-width: 1100px) {
   .FeaturedWork__item:nth-child(even) .FeaturedWork__media:nth-child(odd) {
     height: 36vw;
-    margin-top: -13.8vw;
+    margin-top: -7vw;
   }
 }
 

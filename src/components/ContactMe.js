@@ -4,7 +4,6 @@ import LinkWithIcon from "./LinkWithIcon";
 import { data } from "@/data/portfolio.js";
 
 export default function ContactMe() {
-  console.log("data", data);
   return (
     <div className="Contact__container grid">
       <div id="contact-scroll-target" className="Contact__header">

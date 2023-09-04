@@ -1,10 +1,13 @@
 "use client";
 import "./LoadingScreen.css";
 import useInterval from "@/hooks/useInterval";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Logo from "./Logo";
+import { SmoothScrollContext } from "@/contexts/SmoothScroll.context";
 
 export default function LoadingScreen() {
+  const { scroll } = useContext(SmoothScrollContext);
+
   const [progress, setProgress] = useState(0);
 
   useInterval(
@@ -19,6 +22,15 @@ export default function LoadingScreen() {
   useEffect(() => {
     if (progress >= 100 && document.readyState === "complete") {
       document.documentElement.classList.remove("loading");
+
+      const animationTime = parseFloat(
+        getComputedStyle(document.documentElement).getPropertyValue(
+          "--page-animation-duration"
+        )
+      );
+
+      // resets position of scroll items after laoding animation
+      setTimeout(() => scroll.update(), animationTime);
     }
   }, [progress]);
 
