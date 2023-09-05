@@ -53,15 +53,17 @@ export default function Hero() {
                 marginRight: ".078em",
               }}
             >
-              Development
+              <div>Development</div>
             </div>
           </div>
           <div className="MainHeader__header-line-2 h1">
             <div ref={line2Part1Ref} className="h3">
-              and
+              <div>and</div>
             </div>
             <div className="h1">
-              <div ref={title2Part2RefInner}>Design</div>
+              <div ref={title2Part2RefInner}>
+                <div>Design</div>
+              </div>
             </div>
           </div>
         </h2>

@@ -1,4 +1,3 @@
-import Leaf from "../../public/sprayleaf.jpg";
 import Image from "next/image";
 import useChangeOnScroll from "@/hooks/useChangeOnScroll";
 import { useRef } from "react";
