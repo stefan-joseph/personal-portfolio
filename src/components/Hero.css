@@ -25,6 +25,16 @@
   height: 100%;
 }
 
+html:not(.loading) .MainHeader__header-sub div,
+html:not(.loading) .MainHeader__header-line-1 div div,
+html:not(.loading) .MainHeader__header-line-2 > div:first-child div,
+html:not(.loading) .MainHeader__header-line-2 div:nth-child(2) div div,
+html:not(.loading) .Hero__introduction {
+  transform: none;
+  transition: transform 1s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
 .Hero__header-container {
   grid-column: 2/12;
   display: flex;
@@ -51,9 +61,6 @@
 }
 
 html:not(.loading) .MainHeader__header-sub div {
-  transform: none;
-  transition: transform 1s;
-  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   transition-delay: 1.3s;
 }
 
@@ -66,9 +73,6 @@ html:not(.loading) .MainHeader__header-sub div {
 }
 
 html:not(.loading) .MainHeader__header-line-1 div div {
-  transform: none;
-  transition: transform 1s;
-  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   transition-delay: 0.1s;
 }
 
@@ -90,9 +94,6 @@ html:not(.loading) .MainHeader__header-line-1 div div {
 }
 
 html:not(.loading) .MainHeader__header-line-2 > div:first-child div {
-  transform: none;
-  transition: transform 1s;
-  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   transition-delay: 1.3s;
 }
 
@@ -105,9 +106,6 @@ html:not(.loading) .MainHeader__header-line-2 > div:first-child div {
 }
 
 html:not(.loading) .MainHeader__header-line-2 div:nth-child(2) div div {
-  transform: none;
-  transition: transform 1s;
-  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   transition-delay: 0.3s;
 }
 
@@ -165,6 +163,11 @@ html:not(.loading)
 
 .Hero__introduction {
   margin-top: -16vw;
+  transform: translateY(100%);
+}
+
+html:not(.loading) .Hero__introduction {
+  transition-delay: 1.6s;
 }
 
 .Hero__description {

@@ -8,6 +8,19 @@
   align-items: baseline;
 }
 
+.Nav__menu-btn.animate {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+html:not(.loading) .Nav__menu-btn.animate {
+  transform: none;
+  opacity: 1;
+  transition: transform 1.5s, opacity 1.5s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition-delay: 0.9s;
+}
+
 @media (min-width: 800px) {
   .Nav__menu-btn {
     display: none;

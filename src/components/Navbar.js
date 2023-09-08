@@ -61,7 +61,7 @@ export default function Navbar() {
     <header ref={headerRef}>
       <Link
         href="/"
-        className="Nav__logo"
+        className="Nav__logo animate"
         onClick={(e) => {
           e.preventDefault();
           // @TODO: doesn't work on mobile
@@ -71,10 +71,10 @@ export default function Navbar() {
         <Logo />
       </Link>
       {/* need to leave handleClick as arrow function for 'this.timeoutID' to work */}
-      <MenuButton handleClick={() => menu.open()} />
+      <MenuButton handleClick={() => menu.open()} animate />
       <nav className="Nav__navbar pg-small">
         <ul>
-          {data.menu.map(({ title, href }, index) => (
+          {data.menu.map(({ title, href }) => (
             <li key={title}>
               <Link
                 href="/"
