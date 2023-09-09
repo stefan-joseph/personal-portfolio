@@ -6,7 +6,7 @@ export default function MenuButton({ handleClick, animate }) {
       className={`Nav__menu-btn pg-small${animate ? " animate" : ""}`}
       onClick={handleClick}
     >
-      <div className="Nav__menu-title">
+      <div className="Nav__menu-title ">
         <div>Menu</div>
         <span>Close</span>
       </div>
