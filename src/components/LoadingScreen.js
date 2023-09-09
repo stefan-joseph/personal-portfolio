@@ -21,6 +21,9 @@ export default function LoadingScreen() {
 
   useEffect(() => {
     if (progress >= 100 && document.readyState === "complete") {
+      if (!document.documentElement.classList.contains("has-scroll-smooth")) {
+        document.documentElement.style.setProperty("--scroll-progress", "0%");
+      }
       document.documentElement.classList.remove("loading");
 
       const animationTime = parseFloat(
@@ -30,7 +33,10 @@ export default function LoadingScreen() {
       );
 
       // resets position of scroll items after laoding animation
-      setTimeout(() => scroll.update(), animationTime);
+      setTimeout(() => {
+        document.documentElement.style.removeProperty("--scroll-progress");
+        scroll.update();
+      }, animationTime);
     }
   }, [progress]);
 

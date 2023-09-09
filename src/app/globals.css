@@ -542,6 +542,7 @@ html.has-scroll-dragging {
 
 html:not(.has-scroll-smooth) #page {
   position: initial;
+  transform-origin: center 0%;
   transform-origin: center var(--scroll-progress);
 }
 
