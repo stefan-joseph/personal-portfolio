@@ -149,6 +149,22 @@ header.secondary-nav aside .Nav__close-icon {
 
 header aside nav {
   width: 100%;
+  transform: rotate(-7deg) scale(0.7) translate(0vw, -200%);
+  opacity: 0.5;
+  transition: transform var(--page-animation-duration),
+    opacity var(--page-animation-duration);
+  transition-timing-function: var(--page-animation-timing-function);
+}
+
+@media (min-width: 800px) {
+  header aside nav {
+    transform: rotate(-7deg) scale(0.7) translate(0vw, -80%);
+  }
+}
+
+html.menu-open header aside nav {
+  transform: none;
+  opacity: 1;
 }
 
 header aside ul {
