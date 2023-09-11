@@ -90,6 +90,9 @@ export default function Navbar() {
           ))}
         </ul>
       </nav>
+      <div className="Nav__scroll-direction h3">
+        <div>↓</div>
+      </div>
       <aside>
         <Link
           href="/"
@@ -127,9 +130,6 @@ export default function Navbar() {
           </ul>
         </nav>
       </aside>
-      <div className="Nav__scroll-direction h3">
-        <div>↓</div>
-      </div>
     </header>
   );
 }
