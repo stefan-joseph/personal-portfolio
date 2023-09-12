@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 export const metadata = {
   title: "Stefan Joseph's Portfolio",
   description: "A portfolio showcasing the work of Stefan Joseph.",
-  themeColor: "#FFF",
+  themeColor: "#fbf7f0",
 };
 
 export default function RootLayout({ children }) {
