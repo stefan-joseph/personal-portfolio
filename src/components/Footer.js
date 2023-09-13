@@ -17,6 +17,8 @@ export default function Footer() {
   const scrollIntoView = useScrollIntoView();
 
   useScrollListener((scrollY) => {
+    if (!document.documentElement.classList.contains("has-scroll-smooth"))
+      return;
     if (!isInViewport.current) return;
     footerBlockRef.current.style.transform = `translate3d(0, -${
       Math.max(
