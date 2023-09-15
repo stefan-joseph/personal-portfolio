@@ -18,13 +18,13 @@ export default function Hero() {
 
   // useChangeOnScroll(headerRef, { rate: -0.2 });
 
-  useChangeOnScroll(subRef, { rate: 0.1 });
+  // useChangeOnScroll(subRef, { rate: 0.1, disableMobile: true });
 
-  useChangeOnScroll(line1Ref, { rate: -0.05 });
+  // useChangeOnScroll(line1Ref, { rate: -0.05, disableMobile: true });
 
-  useChangeOnScroll(line2Part1Ref, { rate: 0.02 });
+  // useChangeOnScroll(line2Part1Ref, { rate: 0.02, disableMobile: true });
 
-  useChangeOnScroll(title2Part2RefInner, { rate: -0.1 });
+  // useChangeOnScroll(title2Part2RefInner, { rate: -0.1, disableMobile: true });
 
   return (
     <div className="Hero__container grid">

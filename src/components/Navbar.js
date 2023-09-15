@@ -55,7 +55,7 @@ export default function Navbar() {
     }
   };
 
-  useScrollListener(changeHandler, headerRef);
+  useScrollListener(changeHandler, {}, headerRef);
 
   return (
     <header ref={headerRef}>

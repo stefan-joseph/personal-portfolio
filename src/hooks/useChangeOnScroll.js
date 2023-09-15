@@ -1,18 +1,16 @@
-import { useContext, useEffect, useRef } from "react";
-import { SmoothScrollContext } from "@/contexts/SmoothScroll.context";
+import { useEffect, useRef } from "react";
 import useIsInViewport from "./useIsInViewport";
 import useScrollListener from "./useScrollListener";
 
 export default function useChangeOnScroll(ref, options) {
-  // const { scroll } = useContext(SmoothScrollContext);
-
+  const { disableMobile, parentAsTrack } = options;
   // returns ref indicating if element is in viewport (check with ref.current)
   const elementToTrack = useRef(ref.current);
 
   useEffect(() => {
     // once ref is set, updates the element to track in or out of viewport
     // if parentAsTrack is true, sets this as the parent element
-    if (options.parentAsTrack && ref.current) {
+    if (parentAsTrack && ref.current) {
       elementToTrack.current = ref.current.parentNode;
     } else {
       elementToTrack.current = ref.current;
@@ -22,8 +20,9 @@ export default function useChangeOnScroll(ref, options) {
   const isInViewport = useIsInViewport(elementToTrack);
 
   const rate = options?.rate ?? 0.5;
-  const changeProperty =
-    options?.changeProperty ??
+
+  const modilfyProperty =
+    options?.modifyProperty ??
     function (ref, scrollY, rate) {
       ref.current.style.transform = `translate3d(0, ${scrollY * rate}px, 0)`;
     };
@@ -31,8 +30,8 @@ export default function useChangeOnScroll(ref, options) {
   const changeHandler = (scrollY) => {
     if (!ref.current || !isInViewport.current) return;
 
-    if (!options.parentAsTrack) {
-      changeProperty(ref, scrollY, rate);
+    if (!parentAsTrack) {
+      modilfyProperty(ref, scrollY, rate);
     } else {
       const windowHeight = window.innerHeight;
       const { bottom, height } = ref.current.parentNode.getBoundingClientRect();
@@ -50,25 +49,5 @@ export default function useChangeOnScroll(ref, options) {
     }
   };
 
-  useScrollListener(changeHandler);
-
-  // useEffect(() => {
-  //   if (!scroll) return;
-
-  //   let page;
-  //   if (document.documentElement.classList.contains("has-scroll-smooth")) {
-  //     scroll.on("scroll", (e) => changeHandler(e.scroll.y));
-  //   } else {
-  //     page = document.getElementById("page");
-  //     page.addEventListener("scroll", (e) =>
-  //       changeHandler(Math.abs(e.target.children[0].getBoundingClientRect().y))
-  //     );
-  //   }
-
-  //   return () => {
-  //     page.removeEventListener("scroll", (e) =>
-  //       changeHandler(Math.abs(e.target.children[0].getBoundingClientRect().y))
-  //     );
-  //   };
-  // }, [scroll]);
+  useScrollListener(changeHandler, { disableMobile });
 }

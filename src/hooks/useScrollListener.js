@@ -1,13 +1,16 @@
 import { useContext, useEffect } from "react";
 import { SmoothScrollContext } from "@/contexts/SmoothScroll.context";
 
-export default function useScrollListener(listener, ...variables) {
+export default function useScrollListener(listener, options, ...variables) {
   const { scroll } = useContext(SmoothScrollContext);
 
   useEffect(() => {
     if (!scroll) return;
+    const isMobile =
+      !document.documentElement.classList.contains("has-scroll-smooth");
+    if (options?.disableMobile && isMobile) return;
 
-    if (document.documentElement.classList.contains("has-scroll-smooth")) {
+    if (!isMobile) {
       scroll.on("scroll", (e) => listener(e.scroll.y, ...variables));
     } else {
       window.addEventListener("scroll", (e) =>
