@@ -3,7 +3,7 @@
   top: 0;
   right: 0;
   display: inline-flex;
-  padding: calc(var(--top-bottom-padding) + 0.75rem) 0 var(--top-bottom-padding);
+  padding: calc(var(--top-bottom-padding) + 0.75rem) 0 0;
   padding-right: var(--page-margin-sides);
   align-items: baseline;
 }
@@ -33,7 +33,7 @@ header.secondary-nav .Nav__menu-btn {
 
 @media (min-width: 800px) {
   header.secondary-nav .Nav__menu-btn {
-    padding: 2vw 2vw 2vw 0;
+    padding: 2vw 2vw 0 0;
   }
 }
 

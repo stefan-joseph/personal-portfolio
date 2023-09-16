@@ -31,7 +31,7 @@ html:not(.loading) .Nav__scroll-direction {
   position: absolute;
   top: 0;
   left: 0;
-  padding: var(--top-bottom-padding) 0;
+  padding: var(--top-bottom-padding) 0 0;
   padding-left: var(--page-margin-sides);
   font-size: 7vw;
 }
@@ -39,6 +39,7 @@ html:not(.loading) .Nav__scroll-direction {
 .Nav__logo.animate {
   transform: translateY(100%);
   opacity: 0;
+  pointer-events: none;
 }
 
 html:not(.loading) .Nav__logo.animate {
@@ -49,6 +50,7 @@ html:not(.loading) .Nav__logo.animate {
 
 header.secondary-nav .Nav__logo {
   position: absolute;
+  pointer-events: all;
 }
 
 @media (min-width: 500px) {
@@ -60,7 +62,7 @@ header.secondary-nav .Nav__logo {
 @media (min-width: 800px) {
   .Nav__logo {
     font-size: 3.2vw;
-    padding: 2vw 0 2vw 2vw;
+    padding: 2vw 0 0 2vw;
   }
 }
 

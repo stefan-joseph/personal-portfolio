@@ -64,7 +64,6 @@ export default function Navbar() {
         className="Nav__logo animate"
         onClick={(e) => {
           e.preventDefault();
-          // @TODO: doesn't work on mobile
           scroll.scrollTo("top");
         }}
       >
