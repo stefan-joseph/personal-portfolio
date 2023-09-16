@@ -18,8 +18,10 @@
 
 html:not(.loading) #loading-screen {
   clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
-  transition: clip-path var(--page-animation-duration);
+  transition: clip-path var(--page-animation-duration),
+    visibility var(--page-animation-duration);
   transition-timing-function: var(--page-animation-timing-function);
+  visibility: hidden;
 }
 
 #loading-screen .loader {
