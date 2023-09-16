@@ -68,6 +68,12 @@ html.menu-open .Nav__menu-title span {
 .Nav__icon-container {
   position: relative;
   margin-left: 0.5em;
+  /* transition: transform 0.5s; */
+}
+
+html.has-scroll-smooth .Nav__menu-btn:hover .Nav__icon-container {
+  /* transform: rotate(90deg);
+  transform-origin: center; */
 }
 
 header.secondary-nav .Nav__menu-icon,
