@@ -5,7 +5,7 @@ import LinkWithIcon from "./LinkWithIcon";
 
 export default function FeaturedWorkCard({
   index,
-  details: { title, href, img1, img2, description },
+  details: { title, href, img1, img2, description, marginTop },
 }) {
   const linkRef = useRef();
 
@@ -25,7 +25,13 @@ export default function FeaturedWorkCard({
       <div className="FeaturedWork__media">
         <Image src={img1} alt="work" priority />
       </div>
-      <div className="FeaturedWork__media">
+      <div
+        className="FeaturedWork__media"
+        style={{
+          "--medium": marginTop?.medium,
+          "--large": marginTop?.large,
+        }}
+      >
         <Image src={img2} alt="work" priority ref={linkRef} />
       </div>
       <div className="FeaturedWork__link desktop pg">
